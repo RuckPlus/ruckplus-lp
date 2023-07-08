@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --dir src",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
   },
   "dependencies": {
     "@nextui-org/react": "1.0.0-beta.13",
@@ -23,6 +25,11 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/react-typical": "^0.1.0"
+    "@types/react-typical": "^0.1.0",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "8.43.0",
+    "eslint-config-next": "13.4.7",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.8"
   }
 }
