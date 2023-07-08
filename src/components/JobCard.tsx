@@ -76,6 +76,7 @@ const JobCard = (props: JobCardProps) => {
                   flat
                   auto
                   rounded
+                  disabled
                   color='secondary'
                   icon={<Send set='bold' primaryColor='#9750DD' />}
                   onClick={() => openEntryMmodal()}
