@@ -1,7 +1,6 @@
 import { Container, Grid, Text } from '@nextui-org/react'
 import Typical from 'react-typical'
 import JobCard from '@/components/JobCard'
-import Topbar from '@/components/Layout/Topbar'
 import { consts } from '@/config/constants'
 import jobs from '@/data/jobs.json'
 
@@ -23,7 +22,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Topbar />
       <Container
         id='body'
         css={{
@@ -61,13 +59,13 @@ export default function HomePage() {
             </Text>
           </Grid>
           <Grid xs={12} justify='center' css={{ mb: 32 }}>
-            <Text h2 b>
+            <Text h3 b>
               <Typical steps={typicalSteps} loop={Infinity} wrapper='span' />
             </Text>
           </Grid>
           {jobs.map((job: any) => {
             return (
-              <Grid key={job.id} xs={12} md={4} justify='center'>
+              <Grid key={job.id} xs={12} md={3} justify='center'>
                 <JobCard
                   employmentType={job.employmentType}
                   title={job.position}

@@ -70,7 +70,7 @@ const JobDetailModal = (props: JobDetailModalProps) => {
         <Spacer y={1} />
 
         <Text b>諸手当</Text>
-        <Text>月給300,000円から月給900,000円（スキル見合い）</Text>
+        <Text>月給300,000円から（単価の70-80%還元）</Text>
       </>
     )
   }
