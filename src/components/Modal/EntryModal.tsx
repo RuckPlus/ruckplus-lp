@@ -1,5 +1,16 @@
 import { useState } from 'react'
-import { Button, Checkbox, Grid, Input, Link, Modal, Row, Text, useInput } from '@nextui-org/react'
+import {
+  Button,
+  Checkbox,
+  Grid,
+  Input,
+  Link,
+  Modal,
+  Row,
+  Spacer,
+  Text,
+  useInput,
+} from '@nextui-org/react'
 import { Message, Send } from 'react-iconly'
 import ConpletedModal from '@/components/Modal/CompletedModal'
 import useModal from '@/hooks/useModal'
@@ -16,9 +27,12 @@ const EntryModal = (props: EntryModalProps) => {
 
   const { value: name, setValue: setName } = useInput('')
   const { value: email, setValue: setEmail } = useInput('')
-  const { value: agree, setValue: setAgree } = useInput('false')
 
-  const { open: isCompletedModal, closeModal: closeComplatedModal, openModal: openCompletedModal } = useModal()
+  const {
+    open: isCompletedModal,
+    closeModal: closeComplatedModal,
+    openModal: openCompletedModal,
+  } = useModal()
 
   const handleGoTo = (path: string) => {
     window.open(path, '_blank')
@@ -34,9 +48,6 @@ const EntryModal = (props: EntryModalProps) => {
       }
       if (!email.match(/.+@.+\..+/)) {
         throw new Error('メールアドレスの形式が正しくありません。')
-      }
-      if (agree === 'false') {
-        throw new Error('個人情報の取り扱いに同意してください。')
       }
 
       setErrorMessage('')
@@ -99,16 +110,16 @@ const EntryModal = (props: EntryModalProps) => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </Grid>
-          <Grid xs={12}>
-            <Row justify='center'>
-              <Checkbox
-                value={agree}
-                size='sm'
-                onChange={(checked) => setAgree(checked.toString())}
-              >
-                <Link onClick={() => handleGoTo('/privacy')}>個人情報の取り扱い</Link>に同意する
-              </Checkbox>
-            </Row>
+          <Grid xs={12} direction='column'>
+            <Text
+              b
+              css={{
+                mb: 8,
+              }}
+            >
+              スキルシート
+            </Text>
+            <input type='file' name='skill-sheet' />
           </Grid>
         </Grid.Container>
       </Modal.Body>
@@ -120,10 +131,7 @@ const EntryModal = (props: EntryModalProps) => {
           応募する
         </Button>
       </Modal.Footer>
-      <ConpletedModal
-        open={isCompletedModal}
-        closeModal={closeComplatedModal}
-      />
+      <ConpletedModal open={isCompletedModal} closeModal={closeComplatedModal} />
     </Modal>
   )
 }

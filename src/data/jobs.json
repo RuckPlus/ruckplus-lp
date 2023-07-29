@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "employmentType": "正社員",
+    "position": "フロントエンドエンジニア",
+    "image": "/metakawaii_01.png"
+  },
+  {
+    "id": 2,
+    "employmentType": "正社員",
+    "position": "バックエンドエンジニア",
+    "image": "/metakawaii_01.png"
+  }
+]

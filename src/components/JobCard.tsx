@@ -7,10 +7,11 @@ import EntryModal from '@/components/Modal/EntryModal'
 type JobCardProps = {
   employmentType: string
   title: string
+  image: string
 }
 
 const JobCard = (props: JobCardProps) => {
-  const { employmentType, title } = props
+  const { employmentType, title, image } = props
 
   const { open: isEntryModal, closeModal: closeEntryModal, openModal: openEntryMmodal } = useModal()
   const {
@@ -33,13 +34,7 @@ const JobCard = (props: JobCardProps) => {
           </Col>
         </Card.Header>
         <Card.Body css={{ p: 0 }}>
-          <Card.Image
-            src='/metakawaii_01.png'
-            width='100%'
-            height='100%'
-            objectFit='cover'
-            alt='Card example background'
-          />
+          <Card.Image src={image} width='100%' height='100%' objectFit='cover' alt='Job image' />
         </Card.Body>
         <Card.Footer
           isBlurred
@@ -76,7 +71,6 @@ const JobCard = (props: JobCardProps) => {
                   flat
                   auto
                   rounded
-                  disabled
                   color='secondary'
                   icon={<Send set='bold' primaryColor='#9750DD' />}
                   onClick={() => openEntryMmodal()}

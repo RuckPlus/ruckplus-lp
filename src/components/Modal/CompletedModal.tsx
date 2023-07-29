@@ -25,15 +25,11 @@ const CompletedModal = (props: ConpletedModalProps) => {
         </Text>
       </Modal.Header>
       <Modal.Body>
-        <Text>
-           応募が完了しました！
-        </Text>
+        <Text>応募が完了しました！</Text>
       </Modal.Body>
       <Modal.Footer>
         <Button flat auto color='primary'>
-          <Link href='https://ruckplus-tech.io'>
-            企業ページへ戻る
-          </Link>
+          <Link href='https://ruckplus-tech.io'>企業ページへ戻る</Link>
         </Button>
       </Modal.Footer>
     </Modal>
