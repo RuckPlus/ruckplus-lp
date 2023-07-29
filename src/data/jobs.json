@@ -3,12 +3,21 @@
     "id": 1,
     "employmentType": "正社員",
     "position": "フロントエンドエンジニア",
-    "image": "/metakawaii_01.png"
+    "image": "/metakawaii_01.png",
+    "jobType": "frontend"
   },
   {
     "id": 2,
     "employmentType": "正社員",
     "position": "バックエンドエンジニア",
-    "image": "/metakawaii_01.png"
+    "image": "/metakawaii_01.png",
+    "jobType": "backend"
+  },
+  {
+    "id": 3,
+    "employmentType": "正社員",
+    "position": "web3エンジニア",
+    "image": "/metakawaii_01.png",
+    "jobType": "web3"
   }
 ]

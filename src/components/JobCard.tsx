@@ -8,10 +8,11 @@ type JobCardProps = {
   employmentType: string
   title: string
   image: string
+  jobType: string
 }
 
 const JobCard = (props: JobCardProps) => {
-  const { employmentType, title, image } = props
+  const { employmentType, title, image, jobType } = props
 
   const { open: isEntryModal, closeModal: closeEntryModal, openModal: openEntryMmodal } = useModal()
   const {
@@ -86,7 +87,7 @@ const JobCard = (props: JobCardProps) => {
       </Card>
 
       <EntryModal open={isEntryModal} closeModal={closeEntryModal} />
-      <JobDetailModal open={isJobDetailModal} closeModal={closeJobDetailModal} />
+      <JobDetailModal open={isJobDetailModal} closeModal={closeJobDetailModal} jobType={jobType} />
     </>
   )
 }

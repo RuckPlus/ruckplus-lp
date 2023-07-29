@@ -1,6 +1,7 @@
-import { Button, Container, Link, Grid, Navbar, Text } from '@nextui-org/react'
+import { Container, Grid, Text } from '@nextui-org/react'
 import Typical from 'react-typical'
 import JobCard from '@/components/JobCard'
+import Topbar from '@/components/Layout/Topbar'
 import { consts } from '@/config/constants'
 import jobs from '@/data/jobs.json'
 
@@ -22,24 +23,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Navbar isBordered variant='floating'>
-        <Navbar.Brand>
-          <Text b color='inherit' hideIn='xs'>
-            {consts.companyName}
-          </Text>
-        </Navbar.Brand>
-        <Navbar.Content hideIn='xs'>
-          <Navbar.Link href='#'>Ruck Academy</Navbar.Link>
-        </Navbar.Content>
-        <Navbar.Content>
-          <Navbar.Item>
-            <Button auto flat color='secondary' as={Link} href='https://ruckplus-tech.io'>
-              企業サイト
-            </Button>
-          </Navbar.Item>
-        </Navbar.Content>
-      </Navbar>
-
+      <Topbar />
       <Container
         id='body'
         css={{
@@ -88,6 +72,7 @@ export default function HomePage() {
                   employmentType={job.employmentType}
                   title={job.position}
                   image={job.image}
+                  jobType={job.jobType}
                 />
               </Grid>
             )
